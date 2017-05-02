@@ -1,7 +1,7 @@
 source settings.py
 
-module add gcc
-module add mpich2
+#module add gcc
+#module add mpich2
 
 mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_pw ${PLDA_CHUNKS} \
