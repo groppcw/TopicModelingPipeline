@@ -1,0 +1,2 @@
+PLDA_ALPHA="0.1"
+PLDA_BETA="0.01"
