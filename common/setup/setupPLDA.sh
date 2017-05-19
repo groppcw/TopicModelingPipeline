@@ -20,4 +20,5 @@ mkdir top_words
 mkdir mixtures
 
 # copy necessary scripts/build necessary wrappers
-
+echo "$FS_HOME/methods/PLDA/02-buildTopics.sh" > EXECUTE_ME.sh
+chmod 755 EXECUTE_ME.sh

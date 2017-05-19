@@ -1,5 +1,8 @@
 # put job scheduler directives here
 
-../../common/PLDA/01-runPLDAinThisJob.sh
-python ../../common/PLDA/02-collectModel.py
-python ../../common/PLDA/03-normalizeModel.py
+SETTNGS_DIR=$(pwd)
+DIR=$(dirname $0)
+
+$DIR/../../common/PLDA/01-runPLDAinThisJob.sh $SETTINGS_DIR
+python $DIR/../../common/PLDA/02-collectModel.py $SETTINGS_DIR
+python $DIR/../../common/PLDA/03-normalizeModel.py $SETTINGS_DIR
