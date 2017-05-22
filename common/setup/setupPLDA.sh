@@ -1,6 +1,9 @@
+# this gets called through the experiment run directory, so that's where it'll find everything
+
 source settings.py
 
 FS_HOME="/mnt/efsdata"
+SCRIPT_DIR=FS_HOME+"/TopicModelingPipeline"
 
 #dir=${EXPERIMENT_DIRECTORY}
 #if [ -e $dir ]
@@ -20,5 +23,5 @@ mkdir top_words
 mkdir mixtures
 
 # copy necessary scripts/build necessary wrappers
-echo "$FS_HOME/methods/PLDA/02-buildTopics.sh" > EXECUTE_ME.sh
+echo "$SCRIPT_DIR/method/PLDA/02-buildTopics.sh" >> EXECUTE_ME.sh
 chmod 755 EXECUTE_ME.sh
