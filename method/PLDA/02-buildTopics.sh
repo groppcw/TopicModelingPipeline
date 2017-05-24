@@ -1,6 +1,6 @@
 # put job scheduler directives here
 
-SETTNGS_DIR=$(pwd)
+SETTNGS_DIR=$PWD
 DIR=$(dirname $0)
 
 $DIR/../../common/PLDA/01-runPLDAinThisJob.sh $SETTINGS_DIR

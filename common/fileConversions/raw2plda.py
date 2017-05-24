@@ -1,11 +1,16 @@
 from collections import defaultdict
 
-from settings import *
+import os
+
+CURRENT_WORKDIR = os.getcwd()
+
+#from settings import *
+execfile(CURRENT_WORKDIR + "/settings.py")
 
 fin = open(RAW_DOC_FILE + ".txt","r")
 fout = open(PLDA_CORPUS_DIRECTORY + "/corpus.full.dat","w")
 
-fullwc = defaultdice(int)
+fullwc = defaultdict(int)
 
 for line in fin:
     words = line.split()

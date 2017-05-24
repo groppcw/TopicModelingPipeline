@@ -1,7 +1,11 @@
 # take a bunch of model_0 model_1 etc files and merge them alphabetically
 
-from settings import *
-
+# first, import settings;
+import sys
+if len(sys.argv) > 1:
+  execfile(sys.argv[1] + "setting.py")
+else:
+  from settings import *
 
 
 # for each file, load the file into one giant list
