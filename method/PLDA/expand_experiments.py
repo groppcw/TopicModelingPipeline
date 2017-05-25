@@ -48,7 +48,7 @@ for iterationCount in itersList:
       settingsFile.write('PLDA_ITERS='+str(iterationCount)+'\n')
       settingsFile.write('RAW_DOC_FILE="'+FS_HOME+'/raw_data/'+DATASET_NAME+'/corpus"\n')
       settingsFile.write('PLDA_CORPUS_DIRECTORY="'+FS_HOME+'/methods/PLDA/data/'+DATASET_NAME+'"\n')
-      settingsFile.write('EXPERIMENT_DIRECTORY="'+FS_HOME+'/methods/PLDA/experiments/'+str(expDirname)+'/'+str(repName)+'"\n')
+      settingsFile.write('EXPERIMENT_DIRECTORY="'+FS_HOME+'/methods/PLDA/execution/'+str(expDirname)+'/'+str(repName)+'"\n')
       settingsFile.close()
       ## copy setup script - maybe the script that calls this one should do that? technically we shouldn't necessarily know where this got placed
       #os.system("cp "+FS_HOME+"/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh .")
@@ -57,7 +57,7 @@ for iterationCount in itersList:
       #os.system("./01-setupExperiment.sh")
       os.system(FS_HOME+'/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh')
       # submit actual job
-      # os.system(SUB_CMD + " EXECUTE_ME.sh")
+      os.system(SUB_CMD + " EXECUTE_ME.sh")
 
       # go back out of this rep into the collective folder
       os.chdir("..")
