@@ -24,6 +24,6 @@ mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_topics ${LOCAL_TOPICS} \
         --alpha ${PLDA_ALPHA} \
         --beta ${PLDA_BETA} \
-        --training_data_file ${PLDA_CORPUS_DIRECTORY}/corpus.dat \
+        --training_data_file ${PLDA_CORPUS_DIRECTORY}/corpus.full.dat \
         --model_file ${EXPERIMENT_DIRECTORY}/partial_results/partial-model \
         --total_iterations ${PLDA_ITERS}
