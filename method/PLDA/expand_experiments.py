@@ -47,7 +47,7 @@ for iterationCount in itersList:
       settingsFile.write('PLDA_CHUNKS='+METHOD_PARTITIONS+'\n')
       settingsFile.write('PLDA_ITERS='+str(iterationCount)+'\n')
       settingsFile.write('RAW_DOC_FILE="'+FS_HOME+'/raw_data/'+DATASET_NAME+'/corpus"\n')
-      settingsFile.write('PLDA_CORPUS_DIRECTORY="'+FS_HOME+'/methods/PLDA/'+DATASET_NAME+'"\n')
+      settingsFile.write('PLDA_CORPUS_DIRECTORY="'+FS_HOME+'/methods/PLDA/data/'+DATASET_NAME+'"\n')
       settingsFile.write('EXPERIMENT_DIRECTORY="'+FS_HOME+'/methods/PLDA/experiments/'+str(expDirname)+'/'+str(repName)+'"\n')
       settingsFile.close()
       ## copy setup script - maybe the script that calls this one should do that? technically we shouldn't necessarily know where this got placed
