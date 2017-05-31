@@ -3,10 +3,15 @@
 #consider also changing every 0 to a 1 beforehand so that we have a base value for each word to use
 #but right now I'm not going to worry about setting an epsilon
 
-from settings import *
+# first, import settings;
+import sys
+if len(sys.argv) > 1:
+  execfile(sys.argv[1] + "settings.py")
+else:
+  from settings import *
 
-infile = open("./local_models/time-all.model","r")
-outfile = open("./local_models/time-all.normalized","w")
+infile = open(EXPERIMENT_DIRECTORY + "/local_models/full.model","r")
+outfile = open(EXPERIMENT_DIRECTORY + "/local_models/full.model.normalized","w")
 
 listoflists = []
 for line in infile:
