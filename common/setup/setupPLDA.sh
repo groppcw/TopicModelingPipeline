@@ -25,3 +25,10 @@ mkdir mixtures
 # copy necessary scripts/build necessary wrappers
 echo "$SCRIPT_DIR/method/PLDA/02-buildTopics.sh" >> EXECUTE_ME.sh
 chmod 755 EXECUTE_ME.sh
+
+# modify script to copy output to S3
+# just gonna copy the test file for now, but later 
+# this will sync the whole results folder.
+# Do note I'll need to modify the code to actually copy the stuff
+# we want in S3 to the results folder, right now it's scattered throughout the others. Might be worth moving it there instead of copying, and leaving symbolic links behind?
+echo "aws s3 cp test.txt s3://cutopicmodeling/test.txt"

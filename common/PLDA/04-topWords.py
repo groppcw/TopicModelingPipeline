@@ -7,8 +7,8 @@ else:
   from settings import *
 
 infile = open(EXPERIMENT_DIRECTORY + "/local_models/full.model","r")
-outfile = open("top_words/full-model-top"+str(TOP_X)+".txt","w")
-rawfile = open("top_words/full-model-top"+str(TOP_X)+".raw","w")
+outfile = open(EXPERIMENT_DIRECTORY + "/top_words/full-model-top"+str(TOP_X)+".txt","w")
+rawfile = open(EXPERIMENT_DIRECTORY + "/top_words/full-model-top"+str(TOP_X)+".raw","w")
 
 # load the file into a list of lists
 # for each data column, sort by that column and output the word column for the top 10 entries
