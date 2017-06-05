@@ -11,7 +11,7 @@ source $SETTINGS_DIR/settings.py
 # Setup links for the topic files.
 
 ln -s $SETTINGS_DIR/local_models/full.model $SETTINGS_DIR/results/full.model
-ln -s $SETTINGS_DIR/local_models/full.normalized.model $SETTINGS_DIR/results/full.normalized.model
+ln -s $SETTINGS_DIR/local_models/full.model.normalized $SETTINGS_DIR/results/full.model.normalized
 
 # Setup links for the top words files:
 # When top words is changed to be a loop, this code will need to be modified to loop as well.
