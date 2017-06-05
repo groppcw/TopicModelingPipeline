@@ -2,8 +2,11 @@
 
 # first, import settings;
 import sys
+
+print sys.argv
+
 if len(sys.argv) > 1:
-  execfile(sys.argv[1] + "settings.py")
+  execfile(sys.argv[1] + "/settings.py")
 else:
   from settings import *
 
