@@ -37,7 +37,7 @@ for line in fdict:
   key = line.strip()
   value = ''
   # create empty set of values, will be replaced if it actually appears
-  for unused in range(GLOBAL_TOPICS): 
+  for unused in range(LOCAL_TOPICS): 
     value = value + '0 '
   value = value.strip() + '\n' # remove trailing space
   model[key] = value
