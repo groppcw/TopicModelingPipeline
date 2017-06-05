@@ -1,4 +1,4 @@
-SETTNGS_DIR=$PWD
+SETTINGS_DIR=$PWD
 DIR=$(dirname $0)
 
 source $SETTINGS_DIR/settings.py
