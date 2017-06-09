@@ -65,6 +65,7 @@ for iterationCount in itersList:
         settingsFile.write('PLDA_CORPUS_DIRECTORY="'+str(FS_HOME)+'/methods/PLDA/data/'+str(DATASET_NAME)+'"\n')
         settingsFile.write('EXPERIMENT_DIRECTORY="'+str(FS_HOME)+'/methods/PLDA/execution/'+str(expDirname)+'/'+str(repName)+'"\n')
         settingsFile.write('REP_NAME="'+str(repName)+'"\n')
+        settingsFile.write('S3_PATH="'+str(S3_PATH)+'"\n')
         settingsFile.close()
         ## copy setup script - maybe the script that calls this one should do that? technically we shouldn't necessarily know where this got placed
         #os.system("cp "+FS_HOME+"/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh .")
