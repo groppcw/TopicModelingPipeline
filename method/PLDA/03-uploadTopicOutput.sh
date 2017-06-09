@@ -20,4 +20,6 @@ ln -s $SETTINGS_DIR/top_words/full-model-top${TOP_X}.raw $SETTINGS_DIR/results/f
 
 # Send everything to Amazon!
 #aws s3 cp $SETTINGS_DIR/results/* s3://cutopicmodeling/temporary_landing_zone/
+#aws s3 sync ${SETTINGS_DIR}/results/ ${S3_PATH}/${REP_NAME}/
+echo "aws s3 sync ${SETTINGS_DIR}/results/ ${S3_PATH}/${REP_NAME}/"
 aws s3 sync ${SETTINGS_DIR}/results/ ${S3_PATH}/${REP_NAME}/
