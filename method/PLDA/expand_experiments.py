@@ -56,7 +56,7 @@ for iterationCount in itersList:
         settingsFile.write('LOCAL_TOPICS='+str(topicsCount)+'\n')
         settingsFile.write('HOLDOUT_MOD='+HOLDOUT_MOD+'\n')
         settingsFile.write('HOLDOUT_IDX='+holdout+'\n')
-        settingsFile.write('TOP_X='+TOP_X'\n')
+        settingsFile.write('TOP_X='+TOP_X+'\n')
         totalCores = ARCH_NUM_NODES * ARCH_NUM_CORES
         settingsFile.write('PLDA_CPUS='+str(totalCores)+'\n')
         settingsFile.write('PLDA_CHUNKS='+METHOD_PARTITIONS+'\n')
