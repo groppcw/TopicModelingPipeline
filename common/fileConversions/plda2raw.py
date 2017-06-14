@@ -1,3 +1,7 @@
+# NOTE: THIS NEEDS TO BE ALTERED TO USE REAL ARGUMENTS/SETTINGS
+
+print "WARNING: THIS SCRIPT HASN'T BEEN FIXED YET. USE AT OWN RISK."
+
 docsFile = open("time-0.dat","r")
 outFile = open("time-0.txt","w")
 
