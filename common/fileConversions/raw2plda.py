@@ -18,7 +18,7 @@ for line in fin:
     for word in words:
         wc[word] += 1
         fullwc[word] += 1
-    for w,c in wc.iteritems():
+    for w,c in sorted(wc.iteritems()):
         fout.write(w + " " + str(wc[w]) + " ")
     fout.write("\n")
 fin.close()
