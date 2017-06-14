@@ -5,7 +5,7 @@ topics2 = list()
 
 args = sys.argv
 if(len(args) != 4):
-  print "Usage:",argv[0],"<topics.raw> <topics.raw> <output>"
+  print "Usage:",args[0],"<topics.raw> <topics.raw> <output>"
   exit(1)
 
 f1 = open(args[1],"r")
