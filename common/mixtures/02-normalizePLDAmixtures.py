@@ -1,5 +1,8 @@
-infile = open("mixtures/time-all.local","r")
-outfile = open("mixtures/normalized-all.txt","w")
+import sys
+args = sys.argv
+
+infile = open(argv[1],"r")
+outfile = open(argv[2],"w")
 
 for line in infile:
   entries = line.strip().split()
