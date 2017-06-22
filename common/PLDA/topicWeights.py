@@ -23,7 +23,7 @@ for word in topicfile: #each line of the topicfile is 1 word x NT topics
   rawvals = word.strip().split() #rips off the linebreak, splits by space
   rawvals = rawvals[1:] #remove leading word, leaving only the values
   for index,val in enumerate(rawvals):
-    weights[index] = weights[index] += int(val)
+    weights[index] = weights[index] + int(val)
 
 topicfile.close()
 
