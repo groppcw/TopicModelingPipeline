@@ -21,6 +21,7 @@ source $SETTINGS_DIR/settings.py
 
 training_file="${PLDA_CORPUS_DIRECTORY}/corpus.full.dat"
 if ["$HOLDOUT_MOD" -ne "0"]
+  then
   training_file="${PLDA_CORPUS_DIRECTORY}/corpus.train.${HOLDOUT_IDX}.${HOLDOUT_MOD}"
 fi
 
