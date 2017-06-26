@@ -1,8 +1,8 @@
 import sys
 args = sys.argv
 
-infile = open(argv[1],"r")
-outfile = open(argv[2],"w")
+infile = open(args[1],"r")
+outfile = open(args[2],"w")
 
 for line in infile:
   entries = line.strip().split()

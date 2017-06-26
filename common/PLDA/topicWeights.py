@@ -4,7 +4,7 @@ args = sys.argv
 
 if len(args) == 4: # if the user just provided everything we need...
   topicfilename = args[1]
-  num_topics = args[2]
+  num_topics = int(args[2])
   outfilename = args[3]
 else:
   # we can probably figure all this stuff out from settings variables
