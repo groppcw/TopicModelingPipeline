@@ -26,8 +26,9 @@ mkdir mixtures
 echo "cd $PWD" >> EXECUTE_ME.sh
 echo "$SCRIPT_DIR/method/PLDA/02-buildTopics.sh" >> EXECUTE_ME.sh
 echo "$SCRIPT_DIR/method/PLDA/03-uploadTopicOutput.sh" >> EXECUTE_ME.sh
-echo "$SCRIPT_DIR/method/PLDA/04-estimateMixtures.sh" >> EXECUTE_ME.sh
-echo "$SCRIPT_DIR/method/PLDA/05-uploadMixtureOutput.sh" >> EXECUTE_ME.sh
+#echo "$SCRIPT_DIR/method/PLDA/04-estimateMixtures.sh" >> EXECUTE_ME.sh
+#echo "$SCRIPT_DIR/method/PLDA/05-uploadMixtureOutput.sh" >> EXECUTE_ME.sh
+echo "echo \"complete\" > status.txt" >> EXECUTE_ME.sh
 chmod 755 EXECUTE_ME.sh
 
 # modify script to copy output to S3
