@@ -7,10 +7,10 @@ import os
 TOP_X="20" # which sets of top words per topic to generate
 HOLDOUT_MOD=0 # x-fold cross validation, if set to 0 doesn't do cross validation at all and just acts on full dataset
 
+FS_HOME="/mnt/efsdata" # at some point we should be passed this by argument or have it in the file somewhere
+
 expFile = sys.argv[1]
 execfile(expFile)
-
-FS_HOME="/mnt/efsdata" # at some point we should be passed this by argument or have it in the file somewhere
 
 # get the name of the file, cutting off the directory path and the .py
 # this can definitely be cleaned up to allow for differing file organization
@@ -51,13 +51,13 @@ for iterationCount in itersList:
         executionFile.close()
         # build rest of specific settings
         settingsFile = open("settings.py","a")
-        settingsFile.write('PLDA_LOC="'+FS_HOME+'/CU-PLDA-fixed/mpi_lda"\n')
-        settingsFile.write('PLDA_INFER_LOC="'+FS_HOME+'/CU-PLDA-fixed/infer"\n')
+        settingsFile.write('PLDA_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/mpi_lda"\n')
+        settingsFile.write('PLDA_INFER_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/infer"\n')
         settingsFile.write('LOCAL_TOPICS='+str(topicsCount)+'\n')
         settingsFile.write('HOLDOUT_MOD='+str(HOLDOUT_MOD)+'\n')
         settingsFile.write('HOLDOUT_IDX='+str(holdout)+'\n')
         settingsFile.write('TOP_X='+str(TOP_X)+'\n')
-        totalCores = METHOD_NUM_NODES * METHOD_NUM_CORES
+        totalCores = int(METHOD_NUM_NODES) * int(METHOD_NUM_CORES)
         settingsFile.write('PLDA_CPUS='+str(totalCores)+'\n')
         settingsFile.write('PLDA_CHUNKS='+str(METHOD_PARTITIONS)+'\n')
         settingsFile.write('PLDA_ITERS='+str(iterationCount)+'\n')
