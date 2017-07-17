@@ -57,7 +57,7 @@ for iterationCount in itersList:
         settingsFile.write('HOLDOUT_MOD='+str(HOLDOUT_MOD)+'\n')
         settingsFile.write('HOLDOUT_IDX='+str(holdout)+'\n')
         settingsFile.write('TOP_X='+str(TOP_X)+'\n')
-        totalCores = ARCH_NUM_NODES * ARCH_NUM_CORES
+        totalCores = METHOD_NUM_NODES * METHOD_NUM_CORES
         settingsFile.write('PLDA_CPUS='+str(totalCores)+'\n')
         settingsFile.write('PLDA_CHUNKS='+str(METHOD_PARTITIONS)+'\n')
         settingsFile.write('PLDA_ITERS='+str(iterationCount)+'\n')
