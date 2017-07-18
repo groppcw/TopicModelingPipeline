@@ -8,6 +8,7 @@ TOP_X="20" # which sets of top words per topic to generate
 HOLDOUT_MOD=0 # x-fold cross validation, if set to 0 doesn't do cross validation at all and just acts on full dataset
 
 FS_HOME="/mnt/efsdata" # at some point we should be passed this by argument or have it in the file somewhere
+EXECUTE_HOME=None # If this gets set, we're splitting execution rather than submitting things as we go.
 
 expFile = sys.argv[1]
 execfile(expFile)
@@ -73,8 +74,11 @@ for iterationCount in itersList:
         # execute setup script
         #os.system("./01-setupExperiment.sh")
         os.system(str(FS_HOME)+'/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh')
-        # submit actual job
-        os.system(str(SUB_CMD) + " EXECUTE_ME.sh")
+        # submit actual job, or set it up for someone else to do it
+        if EXECUTE_PATH is not None:
+          os.system('echo "cd $PWD ; ' + str(SUB_CMD) + ' EXECUTE_ME.sh" >> ' + str(EXECUTE_PATH))
+        else:
+          os.system(str(SUB_CMD) + " EXECUTE_ME.sh")
 
         # go back out of this rep into the collective folder
         os.chdir("..")
