@@ -1,9 +1,8 @@
 # this gets called through the experiment run directory, so that's where it'll find everything
 
 FS_HOME="/mnt/efsdata"
-SCRIPT_DIR="$FS_HOME/TopicModelingPipeline"
-
 source $PWD/settings.py
+SCRIPT_DIR="$FS_HOME/TopicModelingPipeline"
 
 #dir=${EXPERIMENT_DIRECTORY}
 #if [ -e $dir ]
