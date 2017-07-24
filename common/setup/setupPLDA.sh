@@ -23,11 +23,12 @@ mkdir mixtures
 
 # copy necessary scripts/build necessary wrappers
 echo "cd $PWD" >> EXECUTE_ME.sh
-echo "$SCRIPT_DIR/method/PLDA/02-buildTopics.sh" >> EXECUTE_ME.sh
+echo "echo \"I have begun running stuff!\" >> status.txt" >> EXECUTE_ME.sh
+echo "time ($SCRIPT_DIR/method/PLDA/02-buildTopics.sh) 2>> status.txt" >> EXECUTE_ME.sh
 echo "$SCRIPT_DIR/method/PLDA/03-uploadTopicOutput.sh" >> EXECUTE_ME.sh
 #echo "$SCRIPT_DIR/method/PLDA/04-estimateMixtures.sh" >> EXECUTE_ME.sh
 #echo "$SCRIPT_DIR/method/PLDA/05-uploadMixtureOutput.sh" >> EXECUTE_ME.sh
-echo "echo \"complete\" > status.txt" >> EXECUTE_ME.sh
+echo "echo \"complete\" >> status.txt" >> EXECUTE_ME.sh
 chmod 755 EXECUTE_ME.sh
 
 # modify script to copy output to S3
@@ -35,4 +36,4 @@ chmod 755 EXECUTE_ME.sh
 # this will sync the whole results folder.
 # Do note I'll need to modify the code to actually copy the stuff
 # we want in S3 to the results folder, right now it's scattered throughout the others. Might be worth moving it there instead of copying, and leaving symbolic links behind?
-echo "aws s3 cp test.txt s3://cutopicmodeling/test.txt"
+# echo "aws s3 cp test.txt s3://cutopicmodeling/test.txt"
