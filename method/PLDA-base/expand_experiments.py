@@ -74,7 +74,7 @@ for iterationCount in itersList:
         #os.system("chmod 755 01-setupExperiment.sh")
         # execute setup script
         #os.system("./01-setupExperiment.sh")
-        os.system(str(FS_HOME)+'/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh')
+        os.system(str(FS_HOME)+'/TopicModelingPipeline/method/PLDA-base/01-setupExperiment.sh')
         # submit actual job, or set it up for someone else to do it
         if EXECUTE_PATH is not None:
           os.system('echo "cd $PWD ; ' + str(SUB_CMD) + ' EXECUTE_ME.sh" >> ' + str(EXECUTE_PATH))

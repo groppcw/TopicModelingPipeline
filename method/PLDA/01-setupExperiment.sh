@@ -1,2 +1,2 @@
 DIR=$(dirname "$0")
-$DIR/../../common/setup/setupPLDA.sh
+$DIR/../../common/setup/setupPLDA+.sh
