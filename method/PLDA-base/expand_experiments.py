@@ -6,6 +6,7 @@ import os
 
 TOP_X="20" # which sets of top words per topic to generate
 HOLDOUT_MOD=0 # x-fold cross validation, if set to 0 doesn't do cross validation at all and just acts on full dataset
+METHOD_BURN_IN="50" # for backwards compatibility
 
 FS_HOME="/mnt/efsdata" # at some point we should be passed this by argument or have it in the file somewhere
 EXECUTE_HOME=None # If this gets set, we're splitting execution rather than submitting things as we go.
@@ -60,7 +61,6 @@ for iterationCount in itersList:
         settingsFile.write('TOP_X='+str(TOP_X)+'\n')
         totalCores = int(METHOD_NUM_NODES) * int(METHOD_NUM_CORES)
         settingsFile.write('PLDA_CPUS='+str(totalCores)+'\n')
-        settingsFile.write('PLDA_CHUNKS='+str(METHOD_PARTITIONS)+'\n')
         settingsFile.write('PLDA_ITERS='+str(iterationCount)+'\n')
         settingsFile.write('PLDA_BURN_IN='+str(METHOD_BURN_IN)+'\n')
         settingsFile.write('RAW_DOC_FILE="'+str(FS_HOME)+'/raw_data/'+str(DATASET_NAME)+'/corpus"\n')
