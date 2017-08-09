@@ -7,6 +7,7 @@ import os
 TOP_X="20" # which sets of top words per topic to generate
 HOLDOUT_MOD=0 # x-fold cross validation, if set to 0 doesn't do cross validation at all and just acts on full dataset
 METHOD_BURN_IN="50" # for backwards compatibility
+USE_SPOTFLEET="false"
 
 FS_HOME="/mnt/efsdata" # at some point we should be passed this by argument or have it in the file somewhere
 EXECUTE_HOME=None # If this gets set, we're splitting execution rather than submitting things as we go.
@@ -69,6 +70,7 @@ for iterationCount in itersList:
         settingsFile.write('REP_NAME="'+str(repName)+'"\n')
         settingsFile.write('S3_PATH="'+str(S3_PATH)+'"\n')
         settingsFile.write('FS_HOME="'+str(FS_HOME)+'"\n')
+        settingsFile.write('USE_SPOTFLEET="'+str(USE_SPOTFLEET)+'"\n')
         settingsFile.close()
         ## copy setup script - maybe the script that calls this one should do that? technically we shouldn't necessarily know where this got placed
         #os.system("cp "+FS_HOME+"/TopicModelingPipeline/method/PLDA/01-setupExperiment.sh .")
