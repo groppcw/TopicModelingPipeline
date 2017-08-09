@@ -14,6 +14,8 @@ if [ -z "$SETTINGS_DIR" ] # if the settings directory isn't already set somewher
   fi
 fi
 
+USE_SPOTFLEET="false"
+
 source $SETTINGS_DIR/settings.py
 
 #module add gcc/5.4
@@ -24,6 +26,14 @@ if [ "$HOLDOUT_MOD" -ne "0" ]
   then
   training_file="${PLDA_CORPUS_DIRECTORY}/corpus.train.${HOLDOUT_IDX}.${HOLDOUT_MOD}"
 fi
+
+if [ "$USE_SPOTFLEET" == "true" ]
+  then
+  PLDA_CPUS=$(nproc --all)
+  echo "USE_SPOTFLEET=${USE_SPOTFLEET}" >> $SETTINGS_DIR/settings.py
+  echo "PLDA_CPUS=${PLDA_CPUS}" >> $SETTINGS_DIR/settings.py
+fi
+
 
 echo "mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_topics ${LOCAL_TOPICS} \
