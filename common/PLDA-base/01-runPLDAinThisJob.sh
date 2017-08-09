@@ -30,7 +30,7 @@ fi
 if [ "$USE_SPOTFLEET" == "true" ]
   then
   PLDA_CPUS=$(nproc --all)
-  echo "USE_SPOTFLEET=\"${USE_SPOTFLEET}\"" >> $SETTINGS_DIR/settings.py
+  #echo "USE_SPOTFLEET=\"${USE_SPOTFLEET}\"" >> $SETTINGS_DIR/settings.py
   echo "PLDA_CPUS=${PLDA_CPUS}" >> $SETTINGS_DIR/settings.py
 fi
 
