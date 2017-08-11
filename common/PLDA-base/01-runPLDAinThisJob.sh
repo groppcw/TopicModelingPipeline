@@ -34,7 +34,7 @@ if [ "$USE_SPOTFLEET" == "true" ]
   echo "PLDA_CPUS=${PLDA_CPUS}" >> $SETTINGS_DIR/settings.py
 fi
 
-
+#       --compute_likelihood "true"
 echo "mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_topics ${LOCAL_TOPICS} \
         --alpha ${PLDA_ALPHA} \
@@ -42,8 +42,7 @@ echo "mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --training_data_file ${training_file} \
         --model_file ${EXPERIMENT_DIRECTORY}/partial_results/partial-model \
         --burn_in_iterations ${PLDA_BURN_IN} \
-        --total_iterations ${PLDA_ITERS} \
-        --compute_likelihood \"true\""
+        --total_iterations ${PLDA_ITERS}"
 mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_topics ${LOCAL_TOPICS} \
         --alpha ${PLDA_ALPHA} \
@@ -51,5 +50,4 @@ mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --training_data_file ${training_file} \
         --model_file ${EXPERIMENT_DIRECTORY}/partial_results/partial-model \
         --burn_in_iterations ${PLDA_BURN_IN} \
-        --total_iterations ${PLDA_ITERS} \
-        --compute_likelihood "true"
+        --total_iterations ${PLDA_ITERS}
