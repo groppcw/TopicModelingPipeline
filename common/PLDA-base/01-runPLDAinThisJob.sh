@@ -42,7 +42,8 @@ echo "mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --training_data_file ${training_file} \
         --model_file ${EXPERIMENT_DIRECTORY}/partial_results/partial-model \
         --burn_in_iterations ${PLDA_BURN_IN} \
-        --total_iterations ${PLDA_ITERS}"
+        --total_iterations ${PLDA_ITERS} \
+        --compute_likelihood \"true\""
 mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --num_topics ${LOCAL_TOPICS} \
         --alpha ${PLDA_ALPHA} \
@@ -50,4 +51,5 @@ mpiexec -n ${PLDA_CPUS} ${PLDA_LOC} \
         --training_data_file ${training_file} \
         --model_file ${EXPERIMENT_DIRECTORY}/partial_results/partial-model \
         --burn_in_iterations ${PLDA_BURN_IN} \
-        --total_iterations ${PLDA_ITERS}
+        --total_iterations ${PLDA_ITERS} \
+        --compute_likelihood "true"
