@@ -30,10 +30,10 @@ holdoutList = range(int(HOLDOUT_MOD))
 if int(HOLDOUT_MOD) == 0:
   holdoutList = range(1)
 
-for iterationCount in itersList:
-  for topicsCount in topicsList:
-    for holdout in holdoutList:
-      for rep in range(REPETITIONS):
+for rep in range(REPETITIONS):
+  for iterationCount in itersList:
+    for topicsCount in topicsList:
+      for holdout in holdoutList:
         # build folder and settings for this specific set of parameters
         repName = "iters-"+str(iterationCount)+"-topics-"+str(topicsCount)
         if int(HOLDOUT_MOD) != 0:
