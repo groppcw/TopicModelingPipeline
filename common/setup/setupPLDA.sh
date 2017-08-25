@@ -26,6 +26,7 @@ echo "cd $PWD" >> EXECUTE_ME.sh
 echo "echo \"I have begun running stuff!\" >> status.txt" >> EXECUTE_ME.sh
 echo "module add mpich/3.2/3.2" >> EXECUTE_ME.sh
 echo "time ($SCRIPT_DIR/method/PLDA-base/02-buildTopics.sh) 2>> status.txt" >> EXECUTE_ME.sh
+echo "python $SCRIPT_DIR/method/PLDA-base/adjustS3dropzone.py $PWD/settings.py" >> EXECUTE_ME.sh
 echo "$SCRIPT_DIR/method/PLDA-base/03-uploadTopicOutput.sh" >> EXECUTE_ME.sh
 #echo "$SCRIPT_DIR/method/PLDA-base/04-estimateMixtures.sh" >> EXECUTE_ME.sh
 #echo "$SCRIPT_DIR/method/PLDA-base/05-uploadMixtureOutput.sh" >> EXECUTE_ME.sh
