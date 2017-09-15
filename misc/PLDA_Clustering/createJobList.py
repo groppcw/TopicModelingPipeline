@@ -3,6 +3,8 @@
 
 #COPIED FROM EXPAND_EXPERIMENTS:
 
+import sys
+
 # Set some default values. These may be overwritten by the experiment file, but need to exist one way or another.
 
 TOP_X="20" # which sets of top words per topic to generate
