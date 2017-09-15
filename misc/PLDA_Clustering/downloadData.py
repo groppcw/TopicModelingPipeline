@@ -16,10 +16,10 @@ S3path = args[1]
 repfilename = args[2]
 outputdirectory = args[3]
 
+repfile = open(repfilename,"r")
+
 os.system("mkdir -p " + str(outputdirectory))
 os.chdir(str(outputdirectory))
-
-repfile = open(repfilename,"r")
 
 for line in repfile:
   # If you're having problems getting throttled by the AWS API, add a sleep in this loop
