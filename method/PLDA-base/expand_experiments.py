@@ -64,8 +64,10 @@ for rep in range(REPETITIONS):
             executionFile.close()
             # build rest of specific settings
             settingsFile = open("settings.py","a")
-            settingsFile.write('PLDA_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/PLDA-base/mpi_lda"\n')
-            settingsFile.write('PLDA_INFER_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/PLDA-base/infer"\n')
+            # settingsFile.write('PLDA_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/PLDA-base/mpi_lda"\n')
+            # settingsFile.write('PLDA_INFER_LOC="'+str(FS_HOME)+'/CU-PLDA-fixed/PLDA-base/infer"\n')
+            settingsFile.write('PLDA_LOC="'+str(FS_HOME)+'/plda/mpi_lda"\n')
+            settingsFile.write('PLDA_INFER_LOC="'+str(FS_HOME)+'/plda/infer"\n')
             settingsFile.write('LOCAL_TOPICS='+str(topicsCount)+'\n')
             settingsFile.write('HOLDOUT_MOD='+str(HOLDOUT_MOD)+'\n')
             settingsFile.write('HOLDOUT_IDX='+str(holdout)+'\n')
